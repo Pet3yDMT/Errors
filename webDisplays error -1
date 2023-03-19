@@ -1,0 +1,91 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  TransformerLoader (OpenComputers-MC1.12.2-1.7.7+5413028.jar)
+  ShutdownPatcher (mcef-1.12.2-1.11b-coremod.jar)
+Contact their authors BEFORE contacting forge
+
+// This doesn't make any sense!
+
+Time: 3/18/23 9:56 PM
+Description: There was a severe problem during mod loading that has caused the game to fail
+
+net.minecraftforge.fml.common.LoaderExceptionModCrash: Caught exception from WebDisplays (webdisplays)
+Caused by: java.lang.NoSuchMethodError: net.montoyo.mcef.api.API.registerScheme(Ljava/lang/String;Ljava/lang/Class;ZZZ)V
+	at net.montoyo.wd.client.ClientProxy.preInit(ClientProxy.java:129)
+	at net.montoyo.wd.WebDisplays.onPreInit(WebDisplays.java:216)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraftforge.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:606)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.sendEventToModContainer(LoadController.java:278)
+	at net.minecraftforge.fml.common.LoadController.propogateStateMessage(LoadController.java:256)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at com.google.common.eventbus.Subscriber.invokeSubscriberMethod(Subscriber.java:91)
+	at com.google.common.eventbus.Subscriber$SynchronizedSubscriber.invokeSubscriberMethod(Subscriber.java:150)
+	at com.google.common.eventbus.Subscriber$1.run(Subscriber.java:76)
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:399)
+	at com.google.common.eventbus.Subscriber.dispatchEvent(Subscriber.java:71)
+	at com.google.common.eventbus.Dispatcher$PerThreadQueuedDispatcher.dispatch(Dispatcher.java:116)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:217)
+	at net.minecraftforge.fml.common.LoadController.distributeStateMessage(LoadController.java:148)
+	at net.minecraftforge.fml.common.Loader.preinitializeMods(Loader.java:602)
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:270)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:466)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:377)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 467052104 bytes (445 MB) / 1063256064 bytes (1014 MB) up to 15927345152 bytes (15189 MB)
+	JVM Flags: 3 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx17088m -Xms256m
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.42 Powered by Forge 14.23.2.2611 8 mods loaded, 8 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State | ID                 | Version       | Source                                   | Signature                                |
+	|:----- |:------------------ |:------------- |:---------------------------------------- |:---------------------------------------- |
+	| UCH   | minecraft          | 1.12.2        | minecraft.jar                            | None                                     |
+	| UCH   | mcp                | 9.42          | minecraft.jar                            | None                                     |
+	| UCH   | FML                | 8.0.99.99     | forge-1.12.2-14.23.2.2611.jar            | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCH   | forge              | 14.23.2.2611  | forge-1.12.2-14.23.2.2611.jar            | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCH   | opencomputers|core | 1.7.7+5413028 | minecraft.jar                            | None                                     |
+	| UCH   | mcef               | 1.11          | mcef-1.12.2-1.11b.jar                    | None                                     |
+	| UCH   | opencomputers      | 1.7.7+5413028 | OpenComputers-MC1.12.2-1.7.7+5413028.jar | None                                     |
+	| UCE   | webdisplays        | 1.0           | webdisplays-1.12.2-1.0.jar               | None                                     |
+
+	Loaded coremods (and transformers): 
+TransformerLoader (OpenComputers-MC1.12.2-1.7.7+5413028.jar)
+  li.cil.oc.common.asm.ClassTransformer
+ShutdownPatcher (mcef-1.12.2-1.11b-coremod.jar)
+  net.montoyo.mcef.coremod.ShutdownPatcher
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 531.18' Renderer: 'NVIDIA GeForce RTX 3070/PCIe/SSE2'
